@@ -10,7 +10,7 @@ class DaiLyBanhMi {
 			wait(); 
 		}
 		soLuongBanhMi++;
-		System.out.println("👨‍🍳 Nhà sản xuất làm thêm bánh mì. Tổng số: " + soLuongBanhMi);
+		System.out.println("Nhà sản xuất làm thêm bánh mì. Tổng số: " + soLuongBanhMi);
 		notifyAll(); 
 	}
 
