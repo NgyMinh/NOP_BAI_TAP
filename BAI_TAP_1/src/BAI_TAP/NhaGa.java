@@ -6,22 +6,22 @@ class NhaGa {
 
 	public synchronized void hanhKhachDen() throws InterruptedException {
 		hanhKhachDoi++;
-		System.out.println("🚶 Hành khách đến, tổng số chờ: " + hanhKhachDoi);
+		System.out.println("Hành khách đến, tổng số chờ: " + hanhKhachDoi);
 		notifyAll(); 
 	}
 
 	public synchronized void tauDen() throws InterruptedException {
 		while (hanhKhachDoi == 0) {
-			System.out.println("⏳ Tàu chờ hành khách...");
+			System.out.println("Tàu chờ hành khách...");
 			wait();
 		}
 
 		int lenTau = Math.min(hanhKhachDoi, choNgoi);
 		hanhKhachDoi -= lenTau;
 
-		System.out.println("🚆 Tàu đến, đón " + lenTau + " hành khách. Còn lại: " + hanhKhachDoi);
+		System.out.println("Tàu đến, đón " + lenTau + " hành khách. Còn lại: " + hanhKhachDoi);
 		Thread.sleep(2000);
-		System.out.println("🚆 Tàu rời ga!");
+		System.out.println("Tàu rời ga!");
 	}
 }
 
